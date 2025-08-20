@@ -8,6 +8,7 @@ RUN apt update && apt install -y \
     gnupg \
     lsb-release \
     curl \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - \
@@ -20,6 +21,8 @@ RUN apt update && apt install -y \
     clangd-18 \
     libc6-dev \
     build-essential \
+    cmake \
+    zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-18 100 \
